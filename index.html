@@ -60,6 +60,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-贴吧2017年以前的贴子都消失" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/14/贴吧2017年以前的贴子都消失/">贴吧2017年以前的贴子都消失?</a>
+    </h1>
+  
+
+    </header>
+    <div class="article-meta">
+      <a href="/2019/05/14/贴吧2017年以前的贴子都消失/" class="article-date">
+  <time datetime="2019-05-14T08:37:29.000Z" itemprop="datePublished">2019-05-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/自评/">自评</a>
+  </div>
+
+    </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p>如何让贴吧2017年以前的贴子都消失?</p>
+<p>我猜是这么实现的</p>
+<ol>
+<li>找到2016年12月31日24:00时发的贴子 ID，比如 102208882033</li>
+<li>获取贴子信息的Service里将ID小于上面数值的贴子内容屏蔽</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">mGetPostInfo</span><span class="params">($arrParam)</span></span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  $arrPostIds = $arrParam[<span class="string">'post_id'</span>];</span><br><span class="line">  <span class="keyword">foreach</span>(arrPostIds <span class="keyword">as</span> $index =&gt; $id) &#123;</span><br><span class="line">    <span class="keyword">if</span>($id &lt; <span class="number">102208882033</span>) &#123;</span><br><span class="line">      <span class="keyword">unset</span>($arrPostIds[$index]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  array_values(arrPostIds);</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为贴子的翻页和总数数据都还保留，所以不应该是从索引上删除的。</p>
+<p>另外这样屏蔽的贴子，贴子内容其实还在，只不过从获取贴子信息的地方屏蔽了。</p>
+<p>缺点就是翻页其实也会获取贴子信息，只不过获取到的是空的，部分业务逻辑需要兼容一下。</p>
+<p>PS：在贴吧，<code>贴子</code> 的写法是职业素养。</p>
+<p>对于为什么会这样？官方说系统维护。按理来说系统维护应该会给一个截止日期，对于没有截止日期的维护…大家懂得</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <!-- <a data-url="http://codefarmer.art/2019/05/14/贴吧2017年以前的贴子都消失/" data-id="cjvnkhxr5001gxf5xtj0cs4y2" class="article-share-link">Share</a> -->
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贴吧/">贴吧</a></li></ul>
+
+    </footer>
+  </div>
+
+  
+</article>
+
+
+
+
+  
     <article id="post-如果Github加了关税" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
@@ -117,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/14/如果Github加了关税/" data-id="cjvn8lbjz0006tl5x46e62drh" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/14/如果Github加了关税/" data-id="cjvnkhxpk0005xf5x3z391suz" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贸易战/">贸易战</a></li></ul>
@@ -171,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/10/小猿年龄二十五-奈何阿姨叫叔叔/" data-id="cjvn8lbk3000atl5xkffgvjjm" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/10/小猿年龄二十五-奈何阿姨叫叔叔/" data-id="cjvnkhxpo000axf5xdj90mmjb" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序员老龄化/">程序员老龄化</a></li></ul>
@@ -222,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/10/程序员的进阶之路/" data-id="cjvn8lbkd000ntl5xp6yysz3e" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/10/程序员的进阶之路/" data-id="cjvnkhxr7001ixf5xm2we3nhh" class="article-share-link">Share</a> -->
       
       
     </footer>
@@ -273,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/10/日本令和年号/" data-id="cjvn8lbk7000etl5xhoezlabx" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/10/日本令和年号/" data-id="cjvnkhxr3001exf5xy0udabdd" class="article-share-link">Share</a> -->
       
       
     </footer>
@@ -318,7 +376,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/09/大数据工程师的尴尬事儿/" data-id="cjvn8lbk20009tl5x3frf1ijy" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/09/大数据工程师的尴尬事儿/" data-id="cjvnkhxpl0006xf5x54icmc3i" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/大数据/">大数据</a></li></ul>
@@ -373,7 +431,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/09/oracle-2019-layoffs/" data-id="cjvn8lbjn0000tl5xurq9zz5e" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/09/oracle-2019-layoffs/" data-id="cjvnkhxra001nxf5x1x3mt3pu" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/甲骨文/">甲骨文</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/裁员/">裁员</a></li></ul>
@@ -425,63 +483,10 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/08/lindows/" data-id="cjvn8lbjv0004tl5xapae54wp" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/08/lindows/" data-id="cjvnkhxpb0000xf5xs9og0lcc" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ternimal/">ternimal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
-
-    </footer>
-  </div>
-
-  
-</article>
-
-
-
-
-  
-    <article id="post-产品经理如何怼程序员" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <div class="article-inner">
-    
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/08/产品经理如何怼程序员/">产品经理如何怼程序员</a>
-    </h1>
-  
-
-    </header>
-    <div class="article-meta">
-      <a href="/2019/05/08/产品经理如何怼程序员/" class="article-date">
-  <time datetime="2019-05-08T11:50:02.000Z" itemprop="datePublished">2019-05-08</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/自评/">自评</a>
-  </div>
-
-    </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      <ol>
-<li>不管怎么做，明天要上线</li>
-<li>这是个Bug吧</li>
-<li>你看看这个Bug</li>
-<li>不是改过了吗，怎么还有问题</li>
-<li>这个功能很简单，和微信一样</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/08/产品经理如何怼程序员/" data-id="cjvn8lbjr0001tl5xh0s9pk7r" class="article-share-link">Share</a> -->
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/修养/">修养</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序员/">程序员</a></li></ul>
 
     </footer>
   </div>
@@ -531,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/08/程序员如何怼产品经理/" data-id="cjvn8lbkc000ltl5xjrimxqbj" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/08/程序员如何怼产品经理/" data-id="cjvnkhxr1001dxf5x57f682uz" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/修养/">修养</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序员/">程序员</a></li></ul>
@@ -546,7 +551,7 @@
 
 
   
-    <article id="post-一名优秀程序员的觉悟" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-产品经理如何怼程序员" class="article article-type-post" itemscope itemprop="blogPost">
 
   <div class="article-inner">
     
@@ -555,14 +560,14 @@
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/01/一名优秀程序员的觉悟/">一名优秀程序员的觉悟</a>
+      <a class="article-title" href="/2019/05/08/产品经理如何怼程序员/">产品经理如何怼程序员</a>
     </h1>
   
 
     </header>
     <div class="article-meta">
-      <a href="/2019/05/01/一名优秀程序员的觉悟/" class="article-date">
-  <time datetime="2019-05-01T11:50:02.000Z" itemprop="datePublished">2019-05-01</time>
+      <a href="/2019/05/08/产品经理如何怼程序员/" class="article-date">
+  <time datetime="2019-05-08T11:50:02.000Z" itemprop="datePublished">2019-05-08</time>
 </a>
       
   <div class="article-category">
@@ -573,12 +578,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-      <p>“又不是不能用”</p>
+      <ol>
+<li>不管怎么做，明天要上线</li>
+<li>这是个Bug吧</li>
+<li>你看看这个Bug</li>
+<li>不是改过了吗，怎么还有问题</li>
+<li>这个功能很简单，和微信一样</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/01/一名优秀程序员的觉悟/" data-id="cjvn8lbjx0005tl5xlhdi4wzd" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/08/产品经理如何怼程序员/" data-id="cjvnkhxpj0004xf5xeqkz61hm" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/修养/">修养</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序员/">程序员</a></li></ul>
@@ -618,7 +629,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/ternimal/" style="font-size: 10px;">ternimal</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/修养/" style="font-size: 20px;">修养</a> <a href="/tags/区块链/" style="font-size: 10px;">区块链</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/投资/" style="font-size: 10px;">投资</a> <a href="/tags/比特币/" style="font-size: 10px;">比特币</a> <a href="/tags/甲骨文/" style="font-size: 10px;">甲骨文</a> <a href="/tags/程序员/" style="font-size: 20px;">程序员</a> <a href="/tags/程序员老龄化/" style="font-size: 10px;">程序员老龄化</a> <a href="/tags/裁员/" style="font-size: 10px;">裁员</a> <a href="/tags/贸易战/" style="font-size: 10px;">贸易战</a>
+      <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/ternimal/" style="font-size: 10px;">ternimal</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/修养/" style="font-size: 20px;">修养</a> <a href="/tags/区块链/" style="font-size: 10px;">区块链</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/投资/" style="font-size: 10px;">投资</a> <a href="/tags/比特币/" style="font-size: 10px;">比特币</a> <a href="/tags/甲骨文/" style="font-size: 10px;">甲骨文</a> <a href="/tags/程序员/" style="font-size: 20px;">程序员</a> <a href="/tags/程序员老龄化/" style="font-size: 10px;">程序员老龄化</a> <a href="/tags/裁员/" style="font-size: 10px;">裁员</a> <a href="/tags/贴吧/" style="font-size: 10px;">贴吧</a> <a href="/tags/贸易战/" style="font-size: 10px;">贸易战</a>
     </div>
   </div>
 
@@ -640,6 +651,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/14/贴吧2017年以前的贴子都消失/">贴吧2017年以前的贴子都消失?</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/14/如果Github加了关税/">如果Github加了关税</a>
           </li>
         
@@ -653,10 +668,6 @@
         
           <li>
             <a href="/2019/05/10/日本令和年号/">日本令和年号</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/09/大数据工程师的尴尬事儿/">大数据工程师的尴尬事儿</a>
           </li>
         
       </ul>
