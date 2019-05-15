@@ -92,7 +92,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/01/一名优秀程序员的觉悟/" data-id="cjvok03c800044h5xd6g2jsoy" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/01/一名优秀程序员的觉悟/" data-id="cjvokqjg10001cz5x47ch39yj" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/修养/">修养</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序员/">程序员</a></li></ul>
@@ -143,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2018/05/08/李笑来/" data-id="cjvok03ce000a4h5xvko6yoot" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2018/05/08/李笑来/" data-id="cjvokqjgi000kcz5xpracfjwu" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/区块链/">区块链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比特币/">比特币</a></li></ul>
@@ -192,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2017/03/15/给猎头/" data-id="cjvok03e2001p4h5xlgi4g48j" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2017/03/15/给猎头/" data-id="cjvokqjhb001tcz5x1hvmtsee" class="article-share-link">Share</a> -->
       
       
     </footer>
@@ -307,6 +307,24 @@
 </nav>
     
 
+
+{% if(config.gitment.github_user) %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: '',
+    owner: '{{config.gitment.github_user}}',
+    repo: '{{config.gitment.github_repo}}',
+    oauth: {
+      client_id: '{{config.gitment.client_id}}',
+      client_secret: '{{config.gitment.client_secret}}',
+    },
+  });
+  gitment.render('gitmentContainer')
+</script>
+{% endif %}
 
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>

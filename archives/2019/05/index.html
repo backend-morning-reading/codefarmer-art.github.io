@@ -365,6 +365,24 @@
     
 
 
+{% if(config.gitment.github_user) %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: '',
+    owner: '{{config.gitment.github_user}}',
+    repo: '{{config.gitment.github_repo}}',
+    oauth: {
+      client_id: '{{config.gitment.client_id}}',
+      client_secret: '{{config.gitment.client_secret}}',
+    },
+  });
+  gitment.render('gitmentContainer')
+</script>
+{% endif %}
+
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>
   var _hmt = _hmt || [];

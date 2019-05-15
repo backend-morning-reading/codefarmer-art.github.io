@@ -122,7 +122,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2019/05/10/程序员的进阶之路/" data-id="cjvok03e1001n4h5xakers28x" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2019/05/10/程序员的进阶之路/" data-id="cjvokqjgm000ncz5xq1nhp5tw" class="article-share-link">Share</a> -->
       
       
     </footer>
@@ -152,28 +152,6 @@
   
 </article>
 
-
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80NDE1NS8yMDY4OQ==">
-  <script type="text/javascript">
-    if (navigator.userAgent.indexOf('Android') == -1 && navigator.userAgent.indexOf('iPhone') == -1) {
-      (function (d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-
-        if (typeof LivereTower === 'function') { return; }
-
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    }
-
-  </script>
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 
 
 </section>
@@ -271,6 +249,24 @@
 </nav>
     
 
+
+{% if(config.gitment.github_user) %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: 'Fri May 10 2019 11:15:11 GMT+0800',
+    owner: '{{config.gitment.github_user}}',
+    repo: '{{config.gitment.github_repo}}',
+    oauth: {
+      client_id: '{{config.gitment.client_id}}',
+      client_secret: '{{config.gitment.client_secret}}',
+    },
+  });
+  gitment.render('gitmentContainer')
+</script>
+{% endif %}
 
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>

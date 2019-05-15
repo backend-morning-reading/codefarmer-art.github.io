@@ -96,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <!-- <a data-url="http://codefarmer.art/2018/05/08/李笑来/" data-id="cjvok03ce000a4h5xvko6yoot" class="article-share-link">Share</a> -->
+      <!-- <a data-url="http://codefarmer.art/2018/05/08/李笑来/" data-id="cjvokqjgi000kcz5xpracfjwu" class="article-share-link">Share</a> -->
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/区块链/">区块链</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比特币/">比特币</a></li></ul>
@@ -128,28 +128,6 @@
   
 </article>
 
-
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC80NDE1NS8yMDY4OQ==">
-  <script type="text/javascript">
-    if (navigator.userAgent.indexOf('Android') == -1 && navigator.userAgent.indexOf('iPhone') == -1) {
-      (function (d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-
-        if (typeof LivereTower === 'function') { return; }
-
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    }
-
-  </script>
-  <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
 
 
 </section>
@@ -247,6 +225,24 @@
 </nav>
     
 
+
+{% if(config.gitment.github_user) %}
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  var gitment = new Gitment({
+    id: 'Tue May 08 2018 19:47:32 GMT+0800',
+    owner: '{{config.gitment.github_user}}',
+    repo: '{{config.gitment.github_repo}}',
+    oauth: {
+      client_id: '{{config.gitment.client_id}}',
+      client_secret: '{{config.gitment.client_secret}}',
+    },
+  });
+  gitment.render('gitmentContainer')
+</script>
+{% endif %}
 
 <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 <script>
